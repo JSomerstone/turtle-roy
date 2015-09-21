@@ -1,0 +1,28 @@
+- hosts: all
+  remote_user: vagrant
+  sudo: true
+  tasks:
+      - name: Install dependencies
+        apt: pkg={{item}} state=present update_cache=yes
+        with_items:
+          - nodejs
+          - nodejs-legacy
+          - npm
+          - mongodb
+          - build-essential
+          - openssl
+          - libssl-dev
+          - pkg-config
+
+      - name: Run npm
+        shell: npm install chdir=/vagrant
+
+      - name: Run npm
+        shell: npm install pm2 -g
+
+      - name: Make dir for db
+        file: dest=/vagrant/db state=directory
+
+      - name: startup server
+        shell: pm2 start /vagrant/server.js
+
