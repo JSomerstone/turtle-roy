@@ -3,3 +3,5 @@ db
 bower_components
 node_modules
 output
+.idea/
+.vagrant/

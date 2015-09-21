@@ -202,12 +202,17 @@ input:focus {
   height: 200px;
 }
 
+.editor, .console, .editor textarea {
+  color: greenyellow;
+  font-size: 20px;
+}
+
 .editor textarea {
   width: 100%;
   height: 196px;
   resize: none;
   background-color: #002b36;
-  color: white;
+  color: yellow;
   border: none;
   outline:none;
 }
@@ -273,12 +278,11 @@ input:focus {
 }
 /* The current prompt text color */
 .jqconsole-prompt {
-    color: #839496;
+    color: yellow;
 }
 /* The command history */
 .jqconsole-old-prompt {
-    color: #839496;
-    opacity: 0.9;
+    color: greenyellow;
     font-weight: normal;
 }
 /* The text color when in input mode. */
@@ -287,7 +291,7 @@ input:focus {
 }
 /* Previously entered input. */
 .jqconsole-old-input {
-    color: #bb0;
+    color: yellow;
     font-weight: normal;
 }
 /* The text color of the output. */
